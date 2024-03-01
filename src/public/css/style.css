@@ -1,0 +1,459 @@
+/* NAVBAR */
+body{
+    background-color: #eef8fd;
+}
+#nav {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 70px 70px 70px #e0eaef;
+    padding-left: 5%;
+    padding-right: 5%;
+    }
+
+
+#menu{
+    color: #014665;
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.btn-contact {
+    border-color: #0a0a0a; /* Color del contorno en estado normal */
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color:  #014665;
+    font-size: 16px;
+}
+  
+  .btn-contact:hover {
+    color: #ffffff; /* Color del texto al pasar el mouse */
+    background-color: #b1d1e6; /* Color de fondo al pasar el mouse */
+    border-color: #b1d1e6; /* Color del contorno al pasar el mouse */
+  }
+
+
+/* MAIN */
+/*  section1  */
+.card-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+.presentation {
+    text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row; /* Cambiado a fila para colocar la imagen al lado del texto */
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    max-width: 50%; /* Ajusta el ancho del texto según sea necesario */
+}
+.text-center h1,
+.text-center p{
+    text-align: left; /* Ajusta el texto del h1 a la izquierda */
+}
+h1{
+    font-family: "PT Serif Caption", serif;
+    font-weight: 400;
+    font-style: italic ;
+    font-size: 50px;
+    color: #014665;
+}
+p{
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: italic;
+    color:  #014665;
+    font-size: 16px;
+}
+.p2 {
+    font-size: 18px;
+ 
+}
+.img-container {
+    position: relative;
+    max-width: 50%; /* Ajusta el ancho de la imagen según sea necesario */
+}
+
+.img-portada {
+    max-width: 70%;
+    transform: rotate(95deg) scaleX(-1);
+}
+
+.img-duplicate {
+    max-width: 70%;
+    transform: rotate(73deg) scaleX(-1);
+    position: absolute;
+    top: -8%;
+    left: 20%;
+    opacity: 0.4;
+}
+.btn-orange {
+    margin-left: 2%;
+    color: #ffffff !important;
+    background-color: #ee5d2b;
+        font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color:  #014665;
+    font-size: 16px;
+}
+.img-flecha{
+    margin-left: 5px;
+}
+.btn-2 {
+        border: none;
+        background: none;
+        padding: 0;
+        margin-top: 1.5%;
+        margin-left: -40%;
+          font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    color:  #014665;
+    font-size: 16px;
+
+}
+
+
+
+/* section2*/
+
+.contenedor-imagenes {
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 5%; /* Ajusta los márgenes según sea necesario */
+  }
+  
+  .p-icon {
+    font-size: 18px;
+    margin-top: 5px; /* Ajusta el margen superior 
+    según sea necesario */
+    font-style: normal;
+  }
+
+
+  /*section 3*/
+
+  h2 {
+    color: #014665;
+    font-family: "PT Serif Caption", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 40px;
+  }
+  .h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+  }
+    
+  .section3 {
+    margin-top: 2%;
+  }
+
+
+/*section4*/
+
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 15%;
+}
+
+.contenedor-img {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 800px;
+}
+
+.imagen-con-titulo {
+  position: relative;
+  width: calc(25% - 20px); /* 25% para 4 imágenes por fila, 20px de margen */
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.transicion {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.diametro {
+  width: 100%;
+  height: auto; /* Altura automática para mantener la proporción */
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.diametro:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.titulo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  color: #014665;
+  font-family: "PT Serif Caption", serif;
+  font-weight: 400;
+  font-style: normal !important;
+  font-size: 20px;
+}
+
+/* Estilos adicionales para dispositivos más pequeños */
+@media (max-width: 401px) {
+  .container-img {
+    margin-top: 100%; /* Ajusta según sea necesario para centrar las imágenes */
+  }
+
+  .imagen-con-titulo {
+    width: calc(50% - 20px); /* Cambiado a 50% para 2 imágenes por fila, 20px de margen */
+  }
+
+  .contenedor-img {
+    max-width: 400px; /* Limita el ancho del contenedor para evitar desbordamiento horizontal */
+  }
+
+  .titulo {
+    font-size: 14px; /* Ajustado el tamaño del texto para dispositivos más pequeños */
+  }
+
+  h3 {
+    margin-top: 100%;
+}
+}
+
+
+
+/* section 5 */
+
+.h3 {
+  margin-top: 15%;
+  text-align: center; /* Alineación del texto en el centro */
+}
+
+.h3 h3 {
+  color: #014665;
+  font-family: "PT Serif Caption", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+}
+
+
+/* section 6 */
+.card-section-6 {
+  height: 400px;
+  padding: 20px !important;
+  box-sizing: border-box;
+}
+
+/* Ajustes para los párrafos dentro de la tarjeta */
+.card-section-6 p {
+  margin: 0; /* Elimina los márgenes predeterminados */
+  overflow: hidden; /* Evita que el texto se desborde */
+  white-space: normal; /* Permite saltos de línea */
+}
+
+.img-circle-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  width: 150px;
+  height: 150px;
+  margin-top: 20%;
+}
+
+.img-circle {
+  border-radius: 50%;
+  width: 100%;
+  max-width: 150px;
+  height: 100%;
+  object-fit: cover;
+  margin-left: -15px;
+}
+
+.tarjeta1,
+.tarjeta2 {
+  color: #014665;
+  background: #D9F3FF;
+  margin: 4px;
+}
+
+.tarjeta1 {
+  border-top-left-radius: 60px !important;
+}
+
+.tarjeta2 {
+  border-bottom-right-radius: 60px !important;
+}
+
+.sect-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.card-title {
+  font-size: 30px;
+  color: #014665;
+  font-family: "PT Serif Caption", serif;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+.card-section-6 p {
+  font-size: 16px; /* Ajusta el tamaño del texto según sea necesario */
+  line-height: 1.5; /* Ajusta el espaciado entre líneas según sea necesario */
+}
+.descripcion{
+  font-size: 14px !important;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color:  #014665;
+}
+ .p4 {
+  margin-top: 3% !important;
+  margin-bottom: 2% !important;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color:  #014665;
+ }
+ .p5{
+  margin-bottom: 1% !important;
+ }
+ .p6 {
+  margin-top: 1% !important;
+ }
+ .p7 {
+  margin-top: 3% !important;
+  margin-bottom: 3% !important;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  color:  #014665;
+  font-size: 16px;
+  font-weight: bolder;
+ }
+
+ /* Estilos para tamaños de pantalla pequeños (menos de 400px de ancho) */
+@media (max-width: 401px) {
+  .sect-6 {
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
+    align-items: center; /* Centra los elementos en el eje transversal */
+
+  }
+
+  .img-circle-box {
+    margin-top: 10%; /* Ajusta el margen superior según sea necesario */
+ margin-left: 30%;
+ margin-bottom: 5%;
+  }
+}
+
+
+
+ /* section 7  */
+
+ .box-img-person{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 8%;
+ }
+ .img-person {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1%;
+  color: #014665;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+ }
+
+ h4{
+  font-size: 30px;
+  color: #014665;
+  font-family: "PT Serif Caption", serif;
+  font-weight: bolder;
+  font-style: italic;
+  text-align: center;
+  margin-top: 1%;
+ }
+ .p8{
+  font-size: 14px;
+  margin-top: 5%;
+ }
+ .btn-email{
+  background: #ffffff;
+  color: #ee5d2b !important;
+  border: 2px solid #ee5d2b ;
+ }
+ .box-buttons-contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 5%;
+ }
+
+ .linea-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+ }
+ .linea {
+  width: 90%; /* Largo de la línea */
+  height: 1px; /* Grosor de la línea */
+  background-color: #014665; /* Color de la línea */
+}
