@@ -15,26 +15,35 @@
     <title>Blue Fish</title>
 </head>
 <body>
+   
+    <div class="container-img form-container">
+        <h1 class="page-title">Hola Admin, agrega un producto a tu web!</h1>
+        <div class="contenedor-img">
+            <!-- Formulario de carga de productos -->
+            <form  class="product-form" id="productForm" action="/admin/addProduct" method="post">
+                <!-- Campos del formulario -->
+                <label for="productName">Nombre:</label>
+                <input type="text" id="productName" name="productName" required>
 
-    <h1>Admin Page</h1>
-    <form id="productForm">
-        <label for="productName">Nombre:</label>
-        <input type="text" id="productName" name="productName" required>
+                <label for="productDescription">Descripción:</label>
+                <textarea id="productDescription" name="productDescription" required></textarea>
 
-        <label for="productDescription">Descripción:</label>
-        <textarea id="productDescription" name="productDescription" required></textarea>
+                <label for="productPrice">Precio:</label>
+                <input type="number" id="productPrice" name="productPrice" required>
 
-        <label for="productPrice">Precio:</label>
-        <input type="number" id="productPrice" name="productPrice" required>
+                <label for="productStock">Stock:</label>
+                <input type="number" id="productStock" name="productStock" required>
 
-        <label for="productStock">Stock:</label>
-        <input type="number" id="productStock" name="productStock" required>
+                <label for="productImage">Imagen URL:</label>
+                <input type="text" id="productImage" name="productImage" required>
 
-        <label for="productImage">Imagen URL:</label>
-        <input type="text" id="productImage" name="productImage" required>
+                <!-- Botón para agregar producto -->
+                <button type="submit" onclick="addProduct()">Agregar Producto</button>
+            </form>
+        </div>
+    </div>
 
-        <button type="button" onclick="addProduct()">Agregar Producto</button>
-    </form>
-
+    <!-- Tus scripts y cierre del body y html aquí -->
 </body>
+
 </html>
