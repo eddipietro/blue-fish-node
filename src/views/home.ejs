@@ -28,12 +28,16 @@
         </div>
     
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" id="menu" class="nav-link px-2">Products</a></li>
+          <li><a href="#product" id="menu" class="nav-link px-2">Products</a></li>
           <li><a href="#" id="menu" class="nav-link px-2 ">Packaging & Weight Options</a></li>
         </ul>
 
   <div class="col-md-3 text-end">
   <button type="button"  class="btn btn-outline-dark rounded-pill text-dark btn-contact">Contact</button>
+  <a href="./cart">
+    <img src="/assets/ico_carrito.png"  width="30px"alt="cart">
+  </a>
+ 
 </div>
       </header>
     </div>
@@ -112,6 +116,11 @@
 
 
 <!-- section4 -->
+    <p id="product"></p>
+
+<%- include('products.ejs', { products: products })  %>
+
+
 
 <div class="container-img">
   <div class="contenedor-img">

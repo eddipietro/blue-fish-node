@@ -12,6 +12,8 @@ admin.initializeApp({
 const app = express();
 const port = process.env.PORT || 3000;
 
+
+//middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
@@ -23,13 +25,23 @@ app.set('view engine', 'ejs');
 const adminRoutes = require('./src/routes/adminRoutes');
 const productRoutes = require('./src/routes/productRoutes');
 const homeRoutes = require('./src/routes/homeRoutes');
+const cartRoutes = require('./src/routes/cartRoutes');
+
+
 
 
 app.use(express.static(path.join(__dirname, 'src', 'public')));
 app.use('/', homeRoutes ); // Rutas para el home web
 app.use('/admin', adminRoutes); // Rutas para el administrador
 app.use('/products', productRoutes); // Rutas para los productos
+app.use('/cart', cartRoutes ); // Rutas para los cart
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
