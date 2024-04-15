@@ -1,29 +1,38 @@
-// YA ESTAN LAS RUTAS CREADAS EN index.JS PARA LAS VISTAS DE CARTROUTER.JS Y CART.EJS, SOLO FALTACREAR EL CODIGO DE LA FUNCIONALIDAD DEL CART Y LINKEARLA CON HOME Y LOS PRODUCTOS
-
-// src/routes/cartRoutes.js
-
 const express = require('express');
 const router = express.Router();
+const { db } = require('../../firebase');
 
-let cartItems = []; // Array para almacenar los elementos del carrito
+// Ruta POST para agregar un producto al carrito
+router.post('/add', async (req, res) => {
+    try {
+        const { productId, productName, price, quantity } = req.body;
+        const totalPrice = price * quantity;
 
-// Ruta para mostrar el carrito
-router.get('/', (req, res) => {
-    res.render('cart', { cartItems }); // Renderizar la vista del carrito y pasar los elementos del carrito como datos
-});
-
-// Ruta para agregar un producto al carrito
-router.post('/add', (req, res) => {
-    const { productId, productName, price } = req.body; // Obtener datos del formulario
-
-    // Agregar el producto al carrito
-    cartItems.push({
-        productId,
-        productName,
-        price: parseFloat(price),
-    });
-
-    res.redirect('/cart'); // Redirigir al usuario de vuelta al carrito
+        // Verificar si el producto ya está en el carrito
+        const cartItemRef = await db.collection('cart').where('productId', '==', productId).limit(1).get();
+        if (!cartItemRef.empty) {
+            // Actualizar la cantidad y el precio total si el producto ya está en el carrito
+            const existingCartItem = cartItemRef.docs[0];
+            await existingCartItem.ref.update({
+                quantity: existingCartItem.data().quantity + quantity,
+                totalPrice: existingCartItem.data().totalPrice + totalPrice
+            });
+        } else {
+            // Agregar el nuevo producto al carrito si no está presente
+            await db.collection('cart').add({
+                productId,
+                productName,
+                price,
+                quantity,
+                totalPrice
+            });
+        }
+        res.redirect('/cart'); // Redirigir al usuario de vuelta al carrito
+        
+    } catch (error) {
+        console.error('Error al agregar el producto al carrito:', error);
+        res.status(500).send('Error interno del servidor');
+    }
 });
 
 module.exports = router;

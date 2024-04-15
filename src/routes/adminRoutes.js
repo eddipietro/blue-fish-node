@@ -1,4 +1,3 @@
-// adminRoutes.js
 const express = require('express');
 const router = express.Router();
 const admin = require('firebase-admin');
@@ -16,8 +15,6 @@ router.post('/addProduct', async (req, res) => {
   try {
     // Obtener los datos del formulario
     const { productName, productDescription, productPrice, productStock, productImage } = req.body;
-
-    // Validar los campos si es necesario
 
     // Guardar el producto en Firebase
     const productsRef = db.collection('products');

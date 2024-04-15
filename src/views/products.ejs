@@ -112,10 +112,12 @@
                     <span class="quantity" contenteditable="true">1</span>
                     <button onclick="increaseQuantity(this)">+</button>
                 </div>
-                <button class="add-to-cart">Add to Cart</button>
+                <button class="add-to-cart" onclick="addToCart('<%= product._id %>', '<%= product.name %>', '<%= product.price %>')">Add to Cart</button>
             </div>
         <% }); %>
     </div>
+
+    <!-- Script para manejar la cantidad y agregar al carrito -->
     <script>
         function increaseQuantity(button) {
             var quantityElement = button.previousElementSibling;
@@ -129,6 +131,28 @@
             if (value > 1) {
                 quantityElement.innerText = value - 1;
             }
+        }
+
+        function addToCart(productId, productName, productPrice) {
+            const quantity = parseInt(document.querySelector('.quantity').innerText);
+            fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    productId: productId,
+                    productName: productName,
+                    price: productPrice,
+                    quantity: quantity
+                })
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '/cart'; // Redirige al carrito después de agregar el producto
+                }
+            }).catch(error => {
+                console.error('Error adding to cart:', error);
+            });
         }
     </script>
 </body>

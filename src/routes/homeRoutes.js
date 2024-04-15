@@ -7,11 +7,9 @@ const db = admin.firestore();
 router.get('/', async (req, res) => {
   try {
     // Obtener productos de la base de datos
-    const products = await db.collection('products').get();
-    const productList = products.docs.map((doc) => doc.data());
-
-    // Renderiza la página de inicio con la lista de productos
-    res.render('home', { products: productList });
+    const productsSnapshot = await db.collection('products').get();
+    const products = productsSnapshot.docs.map(doc => doc.data());
+    res.render('home', { products }); // Pasar los datos de los productos a la vista home
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
